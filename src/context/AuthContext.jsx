@@ -34,9 +34,11 @@ const AuthProvider = ({ children }) => {
     setItemToCart();
   }, [productId]);
 
-  const removeFromCart = (productId) =>{
-    setCartItems((prevCart) => prevCart.filter((item) => item.id !== productId));
-  }
+  const removeFromCart = (productId) => {
+    setCartItems((prevCart) =>
+      prevCart.filter((item) => item.id !== productId)
+    );
+  };
 
   return (
     <authContext.Provider
@@ -45,7 +47,7 @@ const AuthProvider = ({ children }) => {
         setProductId,
         cartItems,
         setProductInfo,
-        removeFromCart
+        removeFromCart,
       }}
     >
       {children}
